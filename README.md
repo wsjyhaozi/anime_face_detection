@@ -4,8 +4,8 @@ Anime face labeling tools
 可以选择自己喜欢的任意动画，以及里面的任意人物（最好露脸比较多）
 
 # 重要！！！选择动画之前请参考是否已经有人做了该动画
-已参与动画列表：http://www.yozocloud.cn/share.do?s=8165044013963308 
-万恶的防火墙，不能用google sheet。这个链接里的内容需要登记才能编辑。
+已参与动画列表：https://docs.qq.com/sheet/DSG9sT01NZ2l6VGx1?c=B9A0A0  
+万恶的防火墙，不能用google sheet。这个链接里的内容需要登记才能编辑。  
 如果列表里没有，请登记后再继续，以免后续别人重复工作  
 
 ## 要求python包
