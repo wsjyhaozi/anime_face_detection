@@ -29,7 +29,8 @@ Anime face labeling tools
 ### Step3
 脚本运行结束后会输出一个以动画文件夹名称命名的.zip文件，请传入iphone或ipad中任意目录下
 ### Step4
-下载shortcuts到iphone或ipad上：https://www.icloud.com/shortcuts/5a7bec47c7f24a4e8ecac9f57d8bc1b7
+下载shortcuts到iphone或ipad上：https://www.icloud.com/shortcuts/5a7bec47c7f24a4e8ecac9f57d8bc1b7  
+为了方便使用建议在iphone/ipad桌面上建立快捷方式
 ### Step5
 打开shortcuts选择zip文件即可。
 ### Step6
