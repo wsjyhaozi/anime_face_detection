@@ -5,6 +5,7 @@ from zipfile import ZipFile
 ########## Modify Parameters Here If You Want ##########
 FPS = 1  # downsample fps to
 MAX_NUM = 1000  # maximum photo number
+#EXPAND_SIZE = 1.5
 ########################################################
 
 
@@ -73,20 +74,29 @@ def Detect_Faces(video_files, zip_obj):
             faces = Detect(img)
             count = 0
             for (x, y, w, h) in faces:
-                xx = int(max(0, x - w / 4))
-                yy = int(max(0, y - h / 4))
+                xx = int(max(0, x - 0.25 * w))
+                yy = int(max(0, y - 0.5 * h))
                 ww = int(w * 1.5)
                 hh = int(h * 1.5)
-                img_crop = img[y: y + h, x: x + w]
+                img_crop = img[yy: yy + hh, xx: xx + ww]
                 cv2.imwrite(f'./temp_faces/face_{n}_{k}_{count}.jpg', img_crop)
                 count += 1
     face_files_all = os.listdir('./temp_faces/')
     face_files_all = ['./temp_faces/' + v for v in face_files_all]
     face_files = []
+    face_files_size =[]
+    face_files_num = range(len(face_files_all))
+
     for v in face_files_all:
-        if os.stat(v).st_size >= 20480:
+        file_size = os.stat(v).st_size
+        if file_size >= 20480:
             face_files.append(v)
-    selected = random.sample(face_files, min(MAX_NUM, len(face_files)))
+            face_files_size.append(file_size)
+    if len(face_files) > MAX_NUM:
+        index = np.argsort(face_files_size)[-MAX_NUM:]
+        selected = face_files[index]
+    else:
+        selected = face_files
     for face in selected:
         zip_obj.write(face)
     os.system('rm -r ./temp_faces')
