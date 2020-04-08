@@ -94,7 +94,7 @@ def Detect_Faces(video_files, zip_obj):
             face_files_size.append(file_size)
     if len(face_files) > MAX_NUM:
         index = np.argsort(face_files_size)[-MAX_NUM:]
-        selected = face_files[index]
+        selected = np.array(face_files)[index].tolist()
     else:
         selected = face_files
     for face in selected:
