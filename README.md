@@ -32,6 +32,7 @@ Anime face labeling tools
 例如存放动画的文件夹名称为anime，则：  
 `python extract.py anime`  
 对于一季12集动画，该脚本运行时间约为1小时，根据动画时长，人脸数目不同而可能有所不同。  
+截取出的人脸为了保证关键特征保留（尤其是发型），图片尺寸较大。
 ### Step3
 脚本运行结束后会输出一个以动画文件夹名称命名的.zip文件，请传入iphone或ipad中任意目录下
 ### Step4
